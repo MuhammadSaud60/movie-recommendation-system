@@ -1,6 +1,6 @@
 A content-based movie recommendation system that suggests films based on their structural similarities, like genre, cast, director, and plot keywords.
 
-**[View the Live Demo Here]([https://your-render-url-here.onrender.com](https://cinematic-matchmaker-a-recommendation.onrender.com/index.html))** 
+**[View the Live Demo Here](https://cinematic-matchmaker-a-recommendation.onrender.com/index.html)** 
 
 ---
 
