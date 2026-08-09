@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 import requests
 import pickle
 import pandas as pd
@@ -30,7 +31,7 @@ try:
 
     with bz2.BZ2File('similarity.pkl.bz2', 'rb') as f:
         similarity = pickle.load(f)
-        
+
 
 except FileNotFoundError:
     print('File not found.')
@@ -90,3 +91,6 @@ def fetch_poster(movie_id):
     
     # Fallback image if no poster is found
     return "https://via.placeholder.com/500x750?text=No+Poster"
+
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
