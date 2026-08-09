@@ -11,8 +11,15 @@ body {
     color: #ffffff;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    padding: 40px 20px;
+    flex: 1;
 }
 
 /* Dark overlay to make text readable */
@@ -129,27 +136,33 @@ button:hover {
 }
 
 .page-footer {
-    margin-top: 30px;
+    margin-top: auto;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkedin-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.16);
+    border: 1px solid rgba(56, 189, 248, 0.35);
     color: #cbd5e1;
     font-size: 0.95rem;
-}
-
-.page-footer p {
-    display: inline-block;
-    padding: 12px 22px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.page-footer a {
-    color: #38bdf8;
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.page-footer a:hover {
-    text-decoration: underline;
+.linkedin-button:hover {
+    background: rgba(56, 189, 248, 0.3);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .movie-poster {
