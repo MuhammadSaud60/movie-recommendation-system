@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Matchmaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <header>
+            <h1>Cinematic Matchmaker</h1>
+            <p>Discover your next favorite film based on what you already love.</p>
+            <a href="how-it-works.html" style="color: #818cf8; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Learn how it works &rarr;</a>
+            <br><br>
+        </header>
+        <div class="search-wrapper">
+            <input type="text" id="movie-input" placeholder="Enter a movie (e.g., Avatar)..." autocomplete="off">
+            <button id="search-btn">Recommend</button>
+        </div>
+
+        <div id="status-message" class="hidden"></div>
+        
+        <div id="results-container" class="results-grid">
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

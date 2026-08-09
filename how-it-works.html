@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Cinematic Matchmaker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container text-page">
+        
+        <!-- Navigation to go back home -->
+        <nav style="text-align: left; margin-bottom: 20px;">
+            <a href="index.html" style="color: #38bdf8; text-decoration: none; font-weight: 600;">&larr; Back to Search</a>
+        </nav>
+
+        <header>
+            <h1>How It Works</h1>
+            <p>The simple science behind the recommendations.</p>
+        </header>
+
+        <div class="content-box">
+            <h2>What is a Content-Based Recommendation?</h2>
+            <p>
+                To recommend movies, I use a method called <strong>Content-Based Recommendation</strong>. This simply means I look at the "content" or details of the movie itself to find matches. If you tell me you love a sci-fi movie directed by James Cameron with aliens and space travel, I will search for other movies that share those exact same details.
+            </p>
+
+            <hr>
+
+            <h2>How I Built This</h2>
+            <p>
+                I started with a large database of movies called the TMDB 5000 dataset. First, I took all the important details about a movie—like its overview, the genres, the cast, and the director. I combined all these words into one giant paragraph, or "tag," for every single movie.
+            </p>
+
+            <p>
+                However, computers do not understand words; they only understand numbers. So, I had to translate those words.
+            </p>
+
+            <h3>1. Creating Vectors</h3>
+            <p>
+                To turn the words into numbers, I used a Python tool called <strong>CountVectorizer</strong> (from a library called sklearn). This tool looks at my giant list of movies and counts how many times specific words appear. 
+            </p>
+            <p>
+                By counting the words, the tool turns my paragraph of text into a long list of numbers. In math and programming, a list of numbers that represents something is called a <strong>Vector</strong>. Now, every single movie in my database is represented by its own unique Vector.
+            </p>
+
+            <h3>2. Finding the Distance</h3>
+            <p>
+                Now that every movie is just a list of numbers, how do I know which ones are similar? I compare them using a tool called <strong>cosine_similarity</strong>. 
+            </p>
+            <p>
+                Imagine drawing a straight line on a graph for every movie based on its numbers. Cosine similarity measures the angle between those lines to see how close they are to pointing in the exact same direction. 
+            </p>
+            <p>
+                This tool gives me a simple score between <strong>0 and 1</strong>:
+            </p>
+            <ul style="text-align: left; margin: 10px auto; max-width: 600px; padding-left: 40px;">
+                <li>A score of <strong>1</strong> means the movies are very similar (their lines point the exact same way).</li>
+                <li>A score of <strong>0</strong> means they have absolutely nothing in common.</li>
+            </ul>
+
+            <p>
+                When you type in a movie, my system quickly checks its Vector against all the other movies, finds the scores that are closest to <strong>1</strong>, and shows you the top 5 results!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
